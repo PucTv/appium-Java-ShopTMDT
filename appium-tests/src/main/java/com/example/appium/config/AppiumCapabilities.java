@@ -26,7 +26,7 @@ public class AppiumCapabilities {
         caps.setCapability("appActivity", appActivity);
         
         caps.setCapability("autoGrantPermissions", true);
-        caps.setCapability("noReset", false);
+        caps.setCapability("noReset", true);
         caps.setCapability("fullReset", false);
         
         AppiumDriver driver = new AndroidDriver(new URL(APPIUM_SERVER_URL), caps);

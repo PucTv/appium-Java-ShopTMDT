@@ -6,7 +6,7 @@ public class ConfigProperties {
     private static final String PLATFORM = getProperty("platform", "Android");
     
     private static final String ANDROID_DEVICE_NAME = getProperty("android.device.name", "emulator-5554");
-    private static final String ANDROID_PLATFORM_VERSION = getProperty("android.platform.version", "13");
+    private static final String ANDROID_PLATFORM_VERSION = getProperty("android.platform.version", "17");
     
     private static final String IOS_DEVICE_NAME = getProperty("ios.device.name", "iPhone 14");
     private static final String IOS_PLATFORM_VERSION = getProperty("ios.platform.version", "16.0");
