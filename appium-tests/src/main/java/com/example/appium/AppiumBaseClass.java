@@ -6,7 +6,7 @@ import io.appium.java_client.AppiumDriver;
 import org.apache.log4j.Logger;
 
 public class AppiumBaseClass {
-    
+
     protected static final Logger logger = Logger.getLogger(AppiumBaseClass.class);
 
     public static void initializeDriver() throws Exception {

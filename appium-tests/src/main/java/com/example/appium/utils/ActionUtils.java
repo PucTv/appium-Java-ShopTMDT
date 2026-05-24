@@ -8,27 +8,10 @@ import com.example.appium.config.DriverManager;
 
 import io.appium.java_client.AppiumDriver;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class ActionUtils {
-    
+
     private static final Logger logger = Logger.getLogger(ActionUtils.class);
     private static AppiumDriver driver = DriverManager.getDriver();
-    
-    
-
 
     public static void click(By locator) {
         try {
@@ -40,9 +23,6 @@ public class ActionUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static void clickDirect(WebElement element) {
         try {
@@ -53,9 +33,6 @@ public class ActionUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static void sendKeys(By locator, String text) {
         try {
@@ -68,9 +45,6 @@ public class ActionUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static void typeText(WebElement element, String text) {
         try {
@@ -81,9 +55,6 @@ public class ActionUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static String getText(By locator) {
         try {
@@ -96,9 +67,6 @@ public class ActionUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static String getTextDirect(WebElement element) {
         try {
@@ -110,9 +78,6 @@ public class ActionUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static String getAttribute(By locator, String attributeName) {
         try {
@@ -125,9 +90,6 @@ public class ActionUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static void clearText(By locator) {
         try {
@@ -139,9 +101,6 @@ public class ActionUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static boolean isElementDisplayed(By locator) {
         try {
@@ -152,9 +111,6 @@ public class ActionUtils {
             return false;
         }
     }
-    
-    
-
 
     public static boolean isElementEnabled(By locator) {
         try {
@@ -165,9 +121,6 @@ public class ActionUtils {
             return false;
         }
     }
-    
-    
-
 
     public static boolean isElementSelected(By locator) {
         try {

@@ -12,24 +12,10 @@ import org.apache.log4j.Logger;
 import java.time.Duration;
 import java.util.List;
 
-
-
-
-
-
-
-
-
-
-
-
 public class WaitUtils {
-    
+
     private static final Logger logger = Logger.getLogger(WaitUtils.class);
     private static AppiumDriver driver = DriverManager.getDriver();
-    
-    
-
 
     public static WebElement waitForElementToBeVisible(By locator) {
         try {
@@ -42,9 +28,6 @@ public class WaitUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static WebElement waitForElementToBeVisible(By locator, long timeoutSeconds) {
         try {
@@ -57,9 +40,6 @@ public class WaitUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static WebElement waitForElementToBeClickable(By locator) {
         try {
@@ -72,9 +52,6 @@ public class WaitUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static WebElement waitForElementToBePresent(By locator) {
         try {
@@ -87,9 +64,6 @@ public class WaitUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static boolean waitForElementToDisappear(By locator) {
         try {
@@ -102,9 +76,6 @@ public class WaitUtils {
             return false;
         }
     }
-    
-    
-
 
     public static List<WebElement> waitForElementsToBePresent(By locator) {
         try {
@@ -117,9 +88,6 @@ public class WaitUtils {
             throw e;
         }
     }
-    
-    
-
 
     public static List<WebElement> waitForElementsToBeVisible(By locator) {
         try {

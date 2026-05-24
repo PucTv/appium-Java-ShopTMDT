@@ -7,16 +7,6 @@ import org.testng.ITestResult;
 import org.apache.log4j.Logger;
 
 
-
-
-
-
-
-
-
-
-
-
 public class TestListener implements ITestListener {
     
     private static final Logger logger = Logger.getLogger(TestListener.class);
