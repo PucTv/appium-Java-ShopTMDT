@@ -88,9 +88,6 @@ public class ConfigProperties {
         return SCREENSHOT_PATH;
     }
     
-    /**
-     * Lấy property từ system properties hoặc environment variables
-     */
     private static String getProperty(String key, String defaultValue) {
         String value = System.getProperty(key);
         if (value == null) {
@@ -99,9 +96,6 @@ public class ConfigProperties {
         return value != null ? value : defaultValue;
     }
     
-    /**
-     * Lấy long property
-     */
     private static long getLongProperty(String key, long defaultValue) {
         try {
             String value = getProperty(key, String.valueOf(defaultValue));
@@ -111,9 +105,6 @@ public class ConfigProperties {
         }
     }
     
-    /**
-     * Lấy boolean property
-     */
     private static boolean getBooleanProperty(String key, boolean defaultValue) {
         try {
             String value = getProperty(key, String.valueOf(defaultValue));

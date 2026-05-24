@@ -9,21 +9,18 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-/**
- * AppiumCapabilities - Quản lý tất cả Desired Capabilities cho Android và iOS
- * Trách nhiệm: Cấu hình driver dựa trên platform
- */
+
 public class AppiumCapabilities {
 
     private static final String APPIUM_SERVER_URL = ConfigProperties.getAppiumServerUrl();
 
     /**
-     * Tạo Android Driver với các capabilities cơ bản
      * @param appPath - Đường dẫn đến APK file
      * @param appPackage - Package name của app
      * @param appActivity - Activity name của app
      * @return AndroidDriver instance
      */
+
     public static AppiumDriver getAndroidDriver(String appPath, String appPackage, String appActivity) 
             throws MalformedURLException {
         
@@ -34,8 +31,7 @@ public class AppiumCapabilities {
         caps.setCapability("app", appPath);
         caps.setCapability("appPackage", appPackage);
         caps.setCapability("appActivity", appActivity);
-        
-        // Thêm các capabilities phổ biến
+
         caps.setCapability("autoGrantPermissions", true);
         caps.setCapability("noReset", false);
         caps.setCapability("fullReset", false);
@@ -62,7 +58,6 @@ public class AppiumCapabilities {
         caps.setCapability("bundleId", bundleId);
         caps.setCapability("udid", udid);
         
-        // Thêm các capabilities phổ biến
         caps.setCapability("autoAcceptAlerts", true);
         
         AppiumDriver driver = new IOSDriver(new URL(APPIUM_SERVER_URL), caps);
@@ -71,9 +66,7 @@ public class AppiumCapabilities {
         return driver;
     }
 
-    /**
-     * Thiết lập implicit wait time
-     */
+
     private static void setImplicitWait(AppiumDriver driver, long seconds) {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
     }
