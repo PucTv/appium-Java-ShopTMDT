@@ -1,34 +1,24 @@
 package com.example.appium.config;
 
-/**
- * ConfigProperties - Quản lý tất cả configuration properties
- * Lấy values từ system properties, environment variables hoặc default values
- */
 public class ConfigProperties {
 
-    // Appium Server Configuration
     private static final String APPIUM_SERVER_URL = getProperty("appium.server.url", "http://localhost:4723");
     private static final String PLATFORM = getProperty("platform", "Android");
     
-    // Device Configuration - Android
     private static final String ANDROID_DEVICE_NAME = getProperty("android.device.name", "emulator-5554");
     private static final String ANDROID_PLATFORM_VERSION = getProperty("android.platform.version", "13");
     
-    // Device Configuration - iOS
     private static final String IOS_DEVICE_NAME = getProperty("ios.device.name", "iPhone 14");
     private static final String IOS_PLATFORM_VERSION = getProperty("ios.platform.version", "16.0");
     
-    // Timeout Configuration
     private static final long IMPLICIT_WAIT = getLongProperty("implicit.wait", 10L);
     private static final long EXPLICIT_WAIT = getLongProperty("explicit.wait", 15L);
     private static final long PAGE_LOAD_TIMEOUT = getLongProperty("page.load.timeout", 30L);
     
-    // App Configuration
     private static final String APP_PATH = getProperty("app.path", "");
     private static final String APP_PACKAGE = getProperty("app.package", "");
     private static final String APP_ACTIVITY = getProperty("app.activity", "");
     
-    // Test Configuration
     private static final boolean TAKE_SCREENSHOT_ON_FAILURE = getBooleanProperty("screenshot.on.failure", true);
     private static final String SCREENSHOT_PATH = getProperty("screenshot.path", "screenshots/");
     

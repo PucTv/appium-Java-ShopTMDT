@@ -10,8 +10,8 @@ public class AppiumExampleTest extends AppiumTestBase {
 
     @BeforeClass
     public void setUp() throws MalformedURLException {
-        // Initialize Android driver
-        // Update these values with your app details
+        
+        
         try {
             AppiumBaseClass.initializeAndroidDriver(
                 "/path/to/app.apk",
@@ -25,14 +25,14 @@ public class AppiumExampleTest extends AppiumTestBase {
 
     @Test
     public void exampleTest() {
-        // Example test
+        
         assertTrue(true, "Test passed");
         System.out.println("Example test executed successfully!");
     }
 
     @Test
     public void appInitializationTest() {
-        // Verify the app can be initialized
+        
         System.out.println("App initialization test passed!");
     }
 

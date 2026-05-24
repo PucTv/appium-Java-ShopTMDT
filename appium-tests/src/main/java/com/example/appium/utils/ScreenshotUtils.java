@@ -9,20 +9,20 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * ScreenshotUtils - Cung cấp phương thức capture screenshot
- * Trách nhiệm: Chụp ảnh màn hình khi test fail hoặc cần verify
- */
+
+
+
+
 public class ScreenshotUtils {
     
     private static final Logger logger = Logger.getLogger(ScreenshotUtils.class);
     private static AppiumDriver driver = DriverManager.getDriver();
     
-    /**
-     * Capture screenshot và lưu vào file
-     * @param screenshotName - Tên screenshot
-     * @return Đường dẫn file screenshot
-     */
+    
+
+
+
+
     public static String captureScreenshot(String screenshotName) {
         try {
             String screenshotPath = ConfigProperties.getScreenshotPath();
@@ -39,17 +39,17 @@ public class ScreenshotUtils {
             File screenshotFile = driver.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
             org.apache.commons.io.FileUtils.copyFile(screenshotFile, new File(fullPath));
             
-            logger.info("✓ Screenshot captured: " + fullPath);
+            logger.info("âœ“ Screenshot captured: " + fullPath);
             return fullPath;
         } catch (Exception e) {
-            logger.error("✗ Failed to capture screenshot", e);
+            logger.error("âœ— Failed to capture screenshot", e);
             return null;
         }
     }
     
-    /**
-     * Capture screenshot với default naming
-     */
+    
+
+
     public static String captureScreenshot() {
         return captureScreenshot("screenshot");
     }

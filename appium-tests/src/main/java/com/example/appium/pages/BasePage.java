@@ -10,55 +10,55 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.apache.log4j.Logger;
 
-/**
- * BasePage - Base class cho tất cả Page Object classes
- * 
- * Trách nhiệm:
- * - Cung cấp các phương thức chung cho tất cả pages
- * - Quản lý driver instance
- * - Wrapper cho ActionUtils, WaitUtils, MobileGestureUtils
- * - Cung cấp logging
- * 
- * Cách sử dụng:
- * public class LoginPage extends BasePage {
- *     // Locators
- *     private static final By USERNAME = By.id("username");
- *     private static final By PASSWORD = By.id("password");
- *     private static final By LOGIN_BTN = By.id("login_btn");
- *     
- *     // Methods
- *     public void login(String username, String password) {
- *         enterUsername(username);
- *         enterPassword(password);
- *         clickLoginButton();
- *     }
- *     
- *     private void enterUsername(String username) {
- *         type(USERNAME, username);
- *     }
- *     
- *     private void enterPassword(String password) {
- *         type(PASSWORD, password);
- *     }
- *     
- *     private void clickLoginButton() {
- *         click(LOGIN_BTN);
- *     }
- * }
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public class BasePage {
     
     protected static final Logger logger = Logger.getLogger(BasePage.class);
     protected AppiumDriver driver;
     
-    /**
-     * Constructor - Initialize driver
-     */
+    
+
+
     public BasePage() {
         this.driver = DriverManager.getDriver();
     }
     
-    // ============ Click Actions ============
+    
     protected void click(By locator) {
         ActionUtils.click(locator);
     }
@@ -67,7 +67,7 @@ public class BasePage {
         ActionUtils.clickDirect(element);
     }
     
-    // ============ Type/Text Actions ============
+    
     protected void type(By locator, String text) {
         ActionUtils.sendKeys(locator, text);
     }
@@ -88,7 +88,7 @@ public class BasePage {
         return ActionUtils.getTextDirect(element);
     }
     
-    // ============ Wait Actions ============
+    
     protected WebElement waitForElement(By locator) {
         return WaitUtils.waitForElementToBeVisible(locator);
     }
@@ -105,7 +105,7 @@ public class BasePage {
         return WaitUtils.waitForElementToBePresent(locator);
     }
     
-    // ============ Mobile Gesture Actions ============
+    
     protected void swipe(int startX, int startY, int endX, int endY, int duration) {
         MobileGestureUtils.swipe(startX, startY, endX, endY, duration);
     }
@@ -130,7 +130,7 @@ public class BasePage {
         MobileGestureUtils.longPress(x, y, durationMs);
     }
     
-    // ============ Verification Actions ============
+    
     protected boolean isElementDisplayed(By locator) {
         return ActionUtils.isElementDisplayed(locator);
     }
@@ -139,7 +139,7 @@ public class BasePage {
         return ActionUtils.isElementEnabled(locator);
     }
     
-    protected boolean isElementSelected(By locator) {
+    public boolean isElementSelected(By locator) {
         return ActionUtils.isElementSelected(locator);
     }
     
@@ -147,7 +147,7 @@ public class BasePage {
         return ActionUtils.getAttribute(locator, attributeName);
     }
     
-    // ============ Screenshot Actions ============
+    
     protected String captureScreenshot(String screenshotName) {
         return ScreenshotUtils.captureScreenshot(screenshotName);
     }
@@ -156,19 +156,19 @@ public class BasePage {
         return ScreenshotUtils.captureScreenshot();
     }
     
-    // ============ Page Navigation ============
-    /**
-     * Kiểm tra trang hiện tại có load thành công không
-     * Các subclass sẽ override method này
-     */
+    
+    
+
+
+
     public void verifyPageLoaded() {
         logger.info("Verifying page loaded...");
-        // Được override bởi các subclasses
+        
     }
     
-    /**
-     * Lấy page title
-     */
+    
+
+
     public String getPageTitle() {
         try {
             return driver.getTitle();
@@ -178,9 +178,9 @@ public class BasePage {
         }
     }
     
-    /**
-     * Lấy current URL
-     */
+    
+
+
     public String getCurrentUrl() {
         try {
             return driver.getCurrentUrl();
@@ -190,14 +190,14 @@ public class BasePage {
         }
     }
     
-    // ============ Utility Methods ============
-    /**
-     * Wait với custom time (milliseconds)
-     */
+    
+    
+
+
     protected void waitSeconds(long seconds) {
         try {
             Thread.sleep(seconds * 1000);
-            logger.info("✓ Waited for " + seconds + " seconds");
+            logger.info("âœ“ Waited for " + seconds + " seconds");
         } catch (InterruptedException e) {
             logger.error("Wait was interrupted", e);
         }
